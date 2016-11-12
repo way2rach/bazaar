@@ -16,7 +16,7 @@ class Landing extends ViewComponent {
 	    return (
 	        <div className="row">
 			  <div className="jumbotron" style={{marginTop: "10%"}} >
-			      <h4>Select Your Location:</h4>
+			      <h4  className="vbz-heading-large">Select Your Location:</h4>
 			      <div>
 			          	<a className="button button-primary button-vbz" onClick={(e) => this.goToMarketPlace(e)}>
 			          		Atlanta
