@@ -5,7 +5,6 @@ export class ViewComponent extends React.Component {
     constructor(props) {
         super(props);
         this.name = 'View Component';
-        this.di = new Injector();
     }
 
     _bind(...methods) {
