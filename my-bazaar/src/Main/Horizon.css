@@ -22,6 +22,11 @@
   white-space: nowrap;
   background-color: none;
   border-radius: 0;
-  border: none;
+  border: 2px solid green;
+  color:black;
   cursor: pointer;
   box-sizing: border-box;}
+
+.nav-tabs>li>a {
+  padding: 10px 80px !important;
+}
