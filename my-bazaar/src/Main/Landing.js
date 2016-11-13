@@ -9,7 +9,7 @@ class Landing extends ViewComponent {
 	}
 
 	goToMarketPlace() {
-		this.props.goToMarketPlace('marketplace');
+		 window.location.hash = 'marketplace';
 	}
 
   	render() {

@@ -11,7 +11,7 @@ class Login extends ViewComponent {
 
     goToLanding(e) {
         e.preventDefault();
-        this.props.goToLanding();
+        window.location.hash = 'landing';
     }
 
     render() {
