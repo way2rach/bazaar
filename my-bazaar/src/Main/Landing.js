@@ -18,13 +18,13 @@ class Landing extends ViewComponent {
 			  <div className="jumbotron" style={{marginTop: "10%"}} >
 			      <h4  className="vbz-heading-large">Select Your Location:</h4>
 			      <div>
-			          	<a className="button button-primary button-vbz" onClick={(e) => this.goToMarketPlace(e)}>
+			          	<a className="button button-primary vbz-button" onClick={(e) => this.goToMarketPlace(e)}>
 			          		Atlanta
 		          		</a>
-		         	 	<a className="button button-primary button-vbz" href="#" onClick={(e) => this.goToMarketPlace(e)}>
+		         	 	<a className="button button-primary vbz-button" href="#" onClick={(e) => this.goToMarketPlace(e)}>
 		         	 		San Francisco
 	         	 		</a>
-			          	<a className="button button-primary button-vbz" href="#" onClick={(e) => this.goToMarketPlace(e)}>
+			          	<a className="button button-primary vbz-button" href="#" onClick={(e) => this.goToMarketPlace(e)}>
 			          		Banglore
 		          		</a>
 			      </div>

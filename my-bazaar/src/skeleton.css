@@ -417,4 +417,4 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
-.button-vbz {padding: 0 92px;}
+.vbz-button {padding: 0 87px; margin-right:15px; font-size: 1.3rem;}
