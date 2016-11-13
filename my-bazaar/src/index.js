@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App, {AppBasic} from './App';
 import Login from './Main/Login.js';
 import Landing from './Main/Landing.js';
-import MarketPlace from './Main/MarketPlace.js';
+import MarketPlace, {MarketPlaceSell} from './Main/MarketPlace.js';
 import './index.css';
 import './skeleton.css';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
@@ -14,8 +14,8 @@ ReactDOM.render(
       <IndexRoute component={Login} />
     </Route>
  	<Route path="/" component={App}>
-      <Route path="/marketplace" component={MarketPlace} />
-      <Route path="/marketplace/sell" component={Landing} />
+      	<Route path="/marketplace/sell" component={MarketPlaceSell} />
+   		<Route path="/marketplace" component={MarketPlace} />
     </Route>
     <Route path="/" component={App}>
       <Route path="/landing" component={Landing} />

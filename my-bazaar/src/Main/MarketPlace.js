@@ -17,12 +17,8 @@ class MarketPlace extends ViewComponent {
         this.props.goToMarketPlace('marketplace');
     }
 
-    render() {
-
-        return (
-            <div className="row">
-                <div id="wrapper">
-                    <div id="sidebar-wrapper">
+    renderCategories() {
+            return  <div id="sidebar-wrapper">
                         <ul className="sidebar-nav">
                             <li className="sidebar-brand">
                                 <a href="#">
@@ -35,23 +31,64 @@ class MarketPlace extends ViewComponent {
                                         </li>
                             })}
                         </ul>
-                    </div>
-                    <div id="page-content-wrapper">
-                        <div className="container-fluid">
-                            <div className="row">
-                                <div className="col-lg-12">
-                                    <ul className="nav nav-tabs">
-                                        <li role="presentation" className="active">
-                                            <a href="/marketplace">Buy</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#/marketplace/sell">Sell</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                    </div>;
+    }
+
+    renderTabs(sell) {
+        let sellClass = '';
+        let buyClass = '';
+        if(sell) {
+            sellClass = 'active';
+        } else {
+            buyClass = 'active';
+        }
+        return <div id="page-content-wrapper">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <ul className="nav nav-tabs">
+                                    <li role="presentation" className={buyClass}>
+                                        <a href="#/marketplace">Buy</a>
+                                    </li>
+                                    <li role="presentation" className={sellClass}>
+                                        <a href="#/marketplace/sell">Sell</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                </div>;
+    }
+
+    render() {
+        let categories = this.renderCategories();
+        let tabs = this.renderTabs();
+        return (
+            <div className="row">
+                <div id="wrapper">
+                    {categories}
+                    {tabs}
+                </div>
+            </div>
+        );
+    }
+}
+
+export class MarketPlaceSell extends MarketPlace {
+
+    constructor() {
+        super();
+    }
+
+    render() {
+        let categories = this.renderCategories();
+        let sell = true;
+        let tabs = this.renderTabs(sell);
+        return (
+            <div className="row">
+                <div id="wrapper">
+                    {categories}
+                    {tabs}
                 </div>
             </div>
         );
