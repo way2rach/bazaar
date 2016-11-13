@@ -1,11 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App, {AppBasic} from './App';
+import Login from './Main/Login.js';
+import Landing from './Main/Landing.js';
+import MarketPlace from './Main/MarketPlace.js';
 import './index.css';
 import './skeleton.css';
-
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 
 ReactDOM.render(
-  <App />,
+  <Router history={hashHistory}>
+    <Route path="/" component={AppBasic}>
+      <IndexRoute component={Login} />
+    </Route>
+ 	<Route path="/" component={App}>
+      <Route path="/marketplace" component={MarketPlace} />
+    </Route>
+    <Route path="/" component={App}>
+      <Route path="/landing" component={Landing} />
+    </Route>
+  </Router>,
   document.getElementById('root')
 );

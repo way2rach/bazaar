@@ -4,8 +4,8 @@
 
 .vbz-login-button {
   position:absolute;
-  margin-top:49%;
-  margin-left:46%;
+  margin-top: 51%;
+  margin-left: 48%;
 }
 
 #loginForm  input[type="submit"] {
@@ -22,9 +22,8 @@
   white-space: nowrap;
   background-color: none;
   border-radius: 0;
-  border: 2px solid green;
-  color:black;
   cursor: pointer;
+  border:none;
   box-sizing: border-box;}
 
 .nav-tabs>li>a {

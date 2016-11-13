@@ -3,51 +3,52 @@ import './App.css';
 import './Custom.css';
 import './Main/Horizon.css';
 
-import Login from './Main/Login.js';
-import Landing from './Main/Landing.js';
-import MarketPlace from './Main/MarketPlace.js';
 import Navigation from './Main/Navigation.js';
 import {ViewComponent} from './Main/ViewComponent.js';
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+
+
+
+export class AppBasic extends ViewComponent {
+
+  constructor() {
+    super();
+    this._bind('setBodyClass');
+    this.setBodyClass('vbz-background');
+  }
+
+  setBodyClass(className) {
+     document.getElementsByTagName('body')[0].className = className;
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="container">
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+}
 
 class App extends ViewComponent {
 
   constructor() {
     super();
-    this._bind('goToMarketPlace');
-    this.state = {
-      page: 1
-    };
+    this.setBodyClass('');
   }
 
-  goToMarketPlace() {
-    this.setState({page: 3});
-  }
-
-  goToLanding() {
-    this.setState({page: 2});
+  setBodyClass(className) {
+     document.getElementsByTagName('body')[0].className = className;
   }
 
   render() {
     return (
-      <div className="App">
-        {this.state.page != 1 ?
-            <Navigation />
-            : null
-          }
-
+      <div>
+        <Navigation />
         <div className="container">
-          {this.state.page == 1 ?
-             <Login goToLanding={(e) => this.goToLanding()}/>
-            : null
-          }
-          {this.state.page == 2 ?
-            <Landing goToMarketPlace={(e) => this.goToMarketPlace(e)} />
-            : null
-          }
-          {this.state.page == 3 ?
-            <MarketPlace goToMarketPlace={(e) => this.goToMarketPlace(e)} />
-            : null
-          }
+          {this.props.children}
         </div>
       </div>
     );
@@ -55,3 +56,6 @@ class App extends ViewComponent {
 }
 
 export default App;
+
+
+

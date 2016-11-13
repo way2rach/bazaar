@@ -16,13 +16,12 @@ class Login extends ViewComponent {
 
     render() {
         return (
-<div>
+            <div>
                 <form onSubmit={(e) => this.goToLanding(e)} method="POST" id="loginForm" autocomplete="off">
                         <input type="submit" name="action" id="signIn" value="Sign in"
                                className="vbz-login-button" onClick={(e) => this.goToLanding(e)}/>
                 </form>
-    </div>
-
+            </div>
         );
     }
 }
