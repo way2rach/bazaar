@@ -54,7 +54,7 @@ class MarketPlace extends ViewComponent {
                             </li>
                             {this.categories.map(item => {
                                 return  <li>
-                                            <a href="#">{item}</a>
+                                            <a href={"#/marketplace/" + encodeURI(item) }>{item}</a>
                                         </li>
                             })}
                         </ul>
