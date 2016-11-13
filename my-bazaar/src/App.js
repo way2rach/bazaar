@@ -46,7 +46,7 @@ class App extends ViewComponent {
   render() {
     return (
       <div>
-        <Navigation />
+        <Navigation location={this.props.location} />
         <div className="container">
           {this.props.children}
         </div>

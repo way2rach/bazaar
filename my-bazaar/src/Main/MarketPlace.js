@@ -19,14 +19,23 @@ class MarketPlace extends ViewComponent {
                 authorName: 'Jeff Kumar',
                 author: 'practicalmissions@gmail.com',
                 name: '273 Hampton Ter NE. Atlanta, GA 30307. 6 beds 6 baths 3,035 sqft',
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind..."
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind...",
+                createdOn: "Oct 31st at 4:30pm"
             },
             {
                 authorName: 'Mike Olingy',
                 author: 'mike.olingy@gmail.com',
                 name: 'Mike - 26 looking for a roomate $550 per month',
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind..."
-            }
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind...",
+                createdOn: "Oct 31st at 5:30pm"
+            },
+             {
+                authorName: 'Rachita Joshi',
+                author: 'rachitaj@vmware.com',
+                name: 'Golden Retreiver puppies',
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind...",
+                createdOn: "Oct 31st at 4:22pm"
+            },
 
          ];
     }
@@ -98,7 +107,7 @@ class MarketPlace extends ViewComponent {
                                                             {product.description}
                                                        </div>
                                                        <div style={{marginLeft:'55px', marginTop:'10px'}}>
-                                                            Posted by: <a href={"mailto:"+product.author} >{product.authorName}</a> on Oct 31st at 4:30pm
+                                                            Posted by: <a href={"mailto:"+product.author} >{product.authorName}</a> on {product.createdOn}
                                                        </div>
                                                     </div>
                                                 </li>;
@@ -137,11 +146,9 @@ export class MarketPlaceSell extends MarketPlace {
                                         <input className="u-full-width" type="text" name="title"  />
                                         <h4>Description</h4>
                                         <textarea className="u-full-width" placeholder="I would like to sell …" id="exampleMessage" />
-
                                         <div>
                                              <input className="button-primary" type="submit" value="Submit" />
                                         </div>
-
                                     </form>
                                 </div>
 
