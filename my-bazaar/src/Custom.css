@@ -1,5 +1,18 @@
 .button-vbz {padding: 0 92px; margin-right:15px;}
 .vbz-heading-large {font-size: 30px;}
+.vbz-listing { list-style: none; }
+.vbz-listing-authorImage {
+    width:50px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+
+.vbz-listing-authorImage img {
+    width:100%;
+    border-radius:50%;
+}
+
 
 /*styles for side nav */
 /*!

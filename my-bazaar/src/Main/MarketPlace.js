@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {ViewComponent} from './ViewComponent.js';
-
+import md5 from "crypto-js/md5";
 class MarketPlace extends ViewComponent {
 
     constructor() {
@@ -16,10 +16,14 @@ class MarketPlace extends ViewComponent {
         this.state = {};
         this.state.products = [
             {
+                authorName: 'Jeff Kumar',
+                author: 'practicalmissions@gmail.com',
                 name: '273 Hampton Ter NE. Atlanta, GA 30307. 6 beds 6 baths 3,035 sqft',
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind..."
             },
             {
+                authorName: 'Mike Olingy',
+                author: 'mike.olingy@gmail.com',
                 name: 'Shamell - 26 looking for a roomate $550 per month',
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind..."
             }
@@ -62,7 +66,7 @@ class MarketPlace extends ViewComponent {
                             <a href="#/marketplace">Listings</a>
                         </li>
                         <li role="presentation" className={sellClass}>
-                            <a href="#/marketplace/sell">Your Promotions</a>
+                            <a href="#/marketplace/create">Create add</a>
                         </li>
                     </ul>
                 </div>;
@@ -83,12 +87,17 @@ class MarketPlace extends ViewComponent {
                              <div className="row">
                                 <ul className="vbz-buy-listing">
                                     {this.state.products.map(product => {
-                                        return  <li>
+                                        let authorImg = 'http://www.gravatar.com/avatar/' + md5(product.author);
+                                        return  <li className="vbz-listing">
                                                     <div>
-                                                       <a href={product.url}>{product.name}</a>
-                                                       <div>
+                                                        <div className="vbz-listing-authorImage">
+                                                            <img src={authorImg} />
+                                                        </div>
+                                                        <a href={product.url}>{product.name}</a>
+                                                        <div>
                                                             {product.description}
                                                        </div>
+                                                       <div>Posted by: {product.authorName}</div>
                                                     </div>
                                                 </li>;
                                     })}
@@ -119,7 +128,24 @@ export class MarketPlaceSell extends MarketPlace {
                     <div id="page-content-wrapper">
                         <div className="container-fluid">
                             <div className="row">
-                                 {tabs}
+                                {tabs}
+                                <div>
+                                    <form>
+                                        <h4>Title</h4>
+                                        <input className="u-full-width" type="text" name="title"  />
+                                        <h4>Description</h4>
+                                        <textarea className="u-full-width" placeholder="I would like to sell …" id="exampleMessage" />
+                                        <label className="example-send-yourself-copy">
+                                            <input type="checkbox" />
+                                            <span className="label-body">Send a copy to yourself</span>
+                                        </label>
+                                        <div>
+                                             <input className="button-primary" type="submit" value="Submit" />
+                                        </div>
+
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
                     </div>

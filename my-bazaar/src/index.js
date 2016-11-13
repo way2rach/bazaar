@@ -14,7 +14,7 @@ ReactDOM.render(
       <IndexRoute component={Login} />
     </Route>
  	<Route path="/" component={App}>
-      	<Route path="/marketplace/sell" component={MarketPlaceSell} />
+      	<Route path="/marketplace/create" component={MarketPlaceSell} />
    		<Route path="/marketplace" component={MarketPlace} />
     </Route>
     <Route path="/" component={App}>
