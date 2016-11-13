@@ -9,8 +9,22 @@ class MarketPlace extends ViewComponent {
         this.categories = [
             'Electronics',
             'Cars',
-            'Books'
+            'Houses for Sale',
+            'Houses for Rent',
+            'Roommates',
         ];
+        this.state = {};
+        this.state.products = [
+            {
+                name: '273 Hampton Ter NE. Atlanta, GA 30307. 6 beds 6 baths 3,035 sqft',
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind..."
+            },
+            {
+                name: 'Shamell - 26 looking for a roomate $550 per month',
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind..."
+            }
+
+         ];
     }
 
     goToMarketPlace() {
@@ -42,21 +56,15 @@ class MarketPlace extends ViewComponent {
         } else {
             buyClass = 'active';
         }
-        return <div id="page-content-wrapper">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <ul className="nav nav-tabs">
-                                    <li role="presentation" className={buyClass}>
-                                        <a href="#/marketplace">Buy</a>
-                                    </li>
-                                    <li role="presentation" className={sellClass}>
-                                        <a href="#/marketplace/sell">Sell</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        return <div className="col-lg-12">
+                    <ul className="nav nav-tabs">
+                        <li role="presentation" className={buyClass}>
+                            <a href="#/marketplace">Listings</a>
+                        </li>
+                        <li role="presentation" className={sellClass}>
+                            <a href="#/marketplace/sell">Your Promotions</a>
+                        </li>
+                    </ul>
                 </div>;
     }
 
@@ -67,7 +75,27 @@ class MarketPlace extends ViewComponent {
             <div className="row">
                 <div id="wrapper">
                     {categories}
-                    {tabs}
+                    <div id="page-content-wrapper">
+                        <div className="container-fluid">
+                            <div className="row">
+                                 {tabs}
+                            </div>
+                             <div className="row">
+                                <ul className="vbz-buy-listing">
+                                    {this.state.products.map(product => {
+                                        return  <li>
+                                                    <div>
+                                                       <a href={product.url}>{product.name}</a>
+                                                       <div>
+                                                            {product.description}
+                                                       </div>
+                                                    </div>
+                                                </li>;
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
@@ -88,7 +116,13 @@ export class MarketPlaceSell extends MarketPlace {
             <div className="row">
                 <div id="wrapper">
                     {categories}
-                    {tabs}
+                    <div id="page-content-wrapper">
+                        <div className="container-fluid">
+                            <div className="row">
+                                 {tabs}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
