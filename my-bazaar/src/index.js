@@ -15,6 +15,7 @@ ReactDOM.render(
     </Route>
  	<Route path="/" component={App}>
       <Route path="/marketplace" component={MarketPlace} />
+      <Route path="/marketplace/sell" component={Landing} />
     </Route>
     <Route path="/" component={App}>
       <Route path="/landing" component={Landing} />
