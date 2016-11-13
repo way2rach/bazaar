@@ -24,7 +24,7 @@ class MarketPlace extends ViewComponent {
             {
                 authorName: 'Mike Olingy',
                 author: 'mike.olingy@gmail.com',
-                name: 'Shamell - 26 looking for a roomate $550 per month',
+                name: 'Mike - 26 looking for a roomate $550 per month',
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ind..."
             }
 
@@ -97,7 +97,9 @@ class MarketPlace extends ViewComponent {
                                                         <div>
                                                             {product.description}
                                                        </div>
-                                                       <div>Posted by: {product.authorName}</div>
+                                                       <div style={{marginLeft:'55px', marginTop:'10px'}}>
+                                                            Posted by: <a href={"mailto:"+product.author} >{product.authorName}</a> on Oct 31st at 4:30pm
+                                                       </div>
                                                     </div>
                                                 </li>;
                                     })}
@@ -135,10 +137,7 @@ export class MarketPlaceSell extends MarketPlace {
                                         <input className="u-full-width" type="text" name="title"  />
                                         <h4>Description</h4>
                                         <textarea className="u-full-width" placeholder="I would like to sell …" id="exampleMessage" />
-                                        <label className="example-send-yourself-copy">
-                                            <input type="checkbox" />
-                                            <span className="label-body">Send a copy to yourself</span>
-                                        </label>
+
                                         <div>
                                              <input className="button-primary" type="submit" value="Submit" />
                                         </div>
